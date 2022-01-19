@@ -8,7 +8,9 @@ if os.path.exists("env.py"):
 
 app = Flask(__name__)
 
-app.config[]
+app.config["MONGO_DBNAME"] = os.environ.get("MANGO_DBNAME")
+app.config["MONGO_URI"] = os.environ.get("MANGO_URI")
+app.secret_key = os.environ.get("SECRET_KEY")
 
 @app.route("/")
 def hello():
